@@ -4,11 +4,15 @@ FROM python:3.10
 # Set working directory
 WORKDIR /app
 
-# Copy files
-COPY . /app
+COPY requirements.txt /app/
 
 # Install dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r /app/requirements.txt
+
+
+# Copy files
+COPY . /app/
+
 
 # Expose port
 EXPOSE 8001
