@@ -17,12 +17,6 @@ app = FastAPI()
 def home():
     return {"message": "Weldome to my First Logistic Regression Model API"}
 
-# @app.post("/predict/")
-# def predict(input_data: ModelInput):
-#     features = [input_data.numerical_features + input_data.categorical_features]
-#     prediction = model.predict(features)
-#     return {"prediction": int(prediction[0])}
-
 @app.post("/predict/")
 def predict(input_data: ModelInput):
     import pandas as pd  # Ensure Pandas is available
